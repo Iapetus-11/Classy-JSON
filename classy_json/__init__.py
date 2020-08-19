@@ -1,5 +1,4 @@
-from .CustomList import CustomList
-from .CustomDict import CustomDict
+from .CustomTypes import CustomList, CustomDict
 import json
 from typing import Union
 
