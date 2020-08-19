@@ -1,8 +1,9 @@
 from .CustomList import CustomList
 from .CustomDict import CustomDict
 import json
+from typing import Union
 
-def loads(data: str):
+def loads(data: str) -> Union[CustomList, CustomDict]:
     _data = json.loads(data)
 
     if isinstance(_data, list):
@@ -12,5 +13,5 @@ def loads(data: str):
     else:
         return data
 
-def load(io):
+def load(io) -> Union[CustomList, CustomDict]:
     return loads(io.read())
