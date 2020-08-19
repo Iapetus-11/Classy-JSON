@@ -21,17 +21,17 @@ class CustomDict(dict):
                 self.__dict__[key] = _dict[key]
 
     def __setitem__(self, key, value):  # CustomDict['a'] = 'something'
-        dict[key] = value
+        super()[key] = value
         self.__dict__[key] = value
 
     def __setattr__(self, name, value):  # CustomDict.a = 'something'
-        dict[name] = value
+        super()[name] = value
         self.__dict__[name] = value
 
     def __delitem__(self, key):  # CustomDict.pop('a')
         self.__dict__.pop(key)
-        return dict.pop(key)
+        return super().pop(key)
 
     def __delattr__(self, name):  # del CustomDict.a
-        dict.pop(key)
+        super().pop(key)
         return self.__dict__.pop(key)
