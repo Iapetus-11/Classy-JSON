@@ -20,6 +20,9 @@ class CustomDict(dict):
             else:
                 self.__dict__[key] = _dict[key]
 
+    def __getitem__(self, key):
+        return dict[key]
+
     def __setitem__(self, key, value):
         dict[key] = value
         self.__dict__[key] = value
