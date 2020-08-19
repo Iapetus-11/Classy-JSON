@@ -12,3 +12,15 @@ class CustomDict(dict):
                 self.__dict__[key] = CustomDict(_dict[key])
             else:
                 self.__dict__[key] = _dict[key]
+
+    def __setitem__(self, key, value):
+        dict[key] = value
+        self.__dict__[key] = value
+
+    def __delitem__(self, key):
+        val = dict[key]
+
+        del dict[key]
+        del self.__dict__[key]
+
+        return val
