@@ -1,5 +1,3 @@
-from .CustomDict import CustomDict
-
 class CustomList(list):
     def __init__(self, _list):
         for i, val in enumerate(_list):

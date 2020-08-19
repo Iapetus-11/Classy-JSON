@@ -1,6 +1,3 @@
-from .CustomList import CustomList
-
-
 class CustomDict(dict):
     def __init__(self, _dict):
         dict.__init__(self, _dict)
