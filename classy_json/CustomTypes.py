@@ -27,7 +27,7 @@ class CustomDict(dict):
     def __delitem__(self, key):
         val = dict[key]
 
-        del dict[key]
-        del self.__dict__[key]
+        dict.pop(key)
+        self.__dict__.pop(key)
 
         return val
