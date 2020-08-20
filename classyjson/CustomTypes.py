@@ -1,7 +1,7 @@
 import threading
 
 
-def threaded_list(_list, threaded):
+def threaded_list(_list):
     # at max 4 chunks
     chunked = [_list[i:i + ceil(len(_list)/4)] for i in range(0, len(_list), ceil(len(_list)/4))]
     final = []
@@ -9,9 +9,9 @@ def threaded_list(_list, threaded):
     def worker(l):
         for i, val in enumerate(l):
             if isinstance(val, list):
-                l[i] = CustomList(val, threaded)
+                l[i] = CustomList(val, True)
             elif isinstance(val, dict):
-                l[i] = CustomDict(val, threaded)
+                l[i] = CustomDict(val, True)
 
         final.extend(l)
 
