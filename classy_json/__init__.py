@@ -13,4 +13,4 @@ def loads(data: str) -> Union[CustomList, CustomDict]:
         return data
 
 def load(io) -> Union[CustomList, CustomDict]:
-    return loads(io.read())
+    return json.load(io)
