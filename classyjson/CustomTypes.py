@@ -9,9 +9,9 @@ def threaded_list(_list, threaded):
     def worker(l):
         for i, val in enumerate(l):
             if isinstance(val, list):
-                l[i] = CustomList(val)
+                l[i] = CustomList(val, threaded)
             elif isinstance(val, dict):
-                l[i] = CustomDict(val)
+                l[i] = CustomDict(val, threaded)
 
         final.extend(l)
 
@@ -33,9 +33,9 @@ class CustomList(list):
         else:
             for i, val in enumerate(_list):
                 if isinstance(val, list):
-                    _list[i] = CustomList(val)
+                    _list[i] = CustomList(val, threaded)
                 elif isinstance(val, dict):
-                    _list[i] = CustomDict(val)
+                    _list[i] = CustomDict(val, threaded)
 
             list.__init__(self, _list)
 
@@ -46,9 +46,9 @@ class CustomDict(dict):
 
         for key in list(_dict):
             if isinstance(_dict[key], list):
-                dict.__setitem__(self, key, CustomList(_dict[key]))
+                dict.__setitem__(self, key, CustomList(_dict[key]), threaded)
             elif isinstance(_dict[key], dict):
-                dict.__setitem__(self, key, CustomDict(_dict[key]))
+                dict.__setitem__(self, key, CustomDict(_dict[key]), threaded)
             else:
                 dict.__setitem__(self, key, _dict[key])
 
