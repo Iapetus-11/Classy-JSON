@@ -46,9 +46,9 @@ class CustomDict(dict):
 
         for key in list(_dict):
             if isinstance(_dict[key], list):
-                dict.__setitem__(self, key, CustomList(_dict[key]), threaded)
+                dict.__setitem__(self, key, CustomList(_dict[key], threaded))
             elif isinstance(_dict[key], dict):
-                dict.__setitem__(self, key, CustomDict(_dict[key]), threaded)
+                dict.__setitem__(self, key, CustomDict(_dict[key], threaded))
             else:
                 dict.__setitem__(self, key, _dict[key])
 
