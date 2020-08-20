@@ -5,12 +5,12 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='classy-json',
-    version='1.3.0',
+    version='1.3.1',
     author='Iapetus-11',
     description='An attempt to recreate the way json behaves in Javascript, but in Python',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/Iapetus-11/Classy-Json',
+    url='https://github.com/Iapetus-11/classy-json',
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
