@@ -12,15 +12,19 @@ class CustomList(list):
 
 class CustomDict(dict):
     def __init__(self, _dict):
-        dict.__init__(self, _dict)
 
         for key in list(_dict):
             if isinstance(_dict[key], list):
-                dict.__setitem__(self, key, CustomList(_dict[key]))
+                #dict.__setitem__(self, key, CustomList(_dict[key]))
+                _dict[key] = CustomList(_dict[key])
             elif isinstance(_dict[key], dict):
-                dict.__setitem__(self, key, CustomDict(_dict[key]))
+                #dict.__setitem__(self, key, CustomDict(_dict[key]))
+                _dict[key] = CustomDict(_dict[key])
             else:
-                dict.__setitem__(self, key, _dict[key])
+                #dict.__setitem__(self, key, _dict[key])
+                pass
+
+        dict.__init__(self, _dict)
 
     def __getattr__(self, name):  # CustomDict.a
         return dict.__getitem__(self, name)
