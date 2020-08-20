@@ -1,3 +1,10 @@
+def can_be_int(an_int):
+    try:
+        int(an_int)
+        return True
+    except ValueError:
+        return False
+
 class CustomList(list):
     def __init__(self, _list):
         for i, val in enumerate(_list):
@@ -13,6 +20,8 @@ class CustomDict(dict):
         dict.__init__(self, _dict)
 
         for key in list(_dict):
+            if can_be_int(key): key = f'_{key}'
+            
             if isinstance(_dict[key], list):
                 self.__dict__[key] = CustomList(_dict[key])
             elif isinstance(_dict[key], dict):
