@@ -10,7 +10,8 @@ class CustomList(list):
 
 class CustomDict(dict):
     def __init__(self, _dict):
-        self._dict = dict.__init__(self, _dict)
+        self._dict = _dict
+        dict.__init__(self, _dict)
 
         for key in list(_dict):
             if isinstance(_dict[key], list):
