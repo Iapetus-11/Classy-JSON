@@ -31,5 +31,5 @@ for i in range(iterations):
 cj_avg = sum(cj_times) / len(cj_times)
 jj_avg = sum(jj_times) / len(jj_times)
 
-print('classy-json (average time to decode data from a string): {cj_avg} seconds')
-print('json (average time to decode data from a string): {jj_avg} seconds')
+print(f'classy-json (average time to decode data from a string): {cj_avg} seconds')
+print(f'json (average time to decode data from a string): {jj_avg} seconds')
