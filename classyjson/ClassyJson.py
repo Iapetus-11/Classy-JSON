@@ -3,9 +3,9 @@ import json
 
 def objectify(data):
     if isinstance(data, list):
-        return CustomList(data, threaded)
+        return CustomList(data)
     elif isinstance(data, dict):
-        return CustomDict(data, threaded)
+        return CustomDict(data)
     else:
         return data
 
