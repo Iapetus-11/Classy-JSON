@@ -20,21 +20,18 @@ class CustomDict(dict):
             else:
                 self.__dict__[key] = _dict[key]
 
-    def __getitem__(self, key):  # CustomDict['a']
-        return dict[key]
-
     def __setitem__(self, key, value):  # CustomDict['a'] = 'something'
-        dict[key] = value
+        dict.__setitem__(key, value)
         self.__dict__[key] = value
 
     def __setattr__(self, name, value):  # CustomDict.a = 'something'
-        dict[name] = value
+        dict.__setitem__(name, value)
         self.__dict__[name] = value
 
     def __delitem__(self, key):  # CustomDict.pop('a')
-        self.__dict__.pop(key)
-        return dict.pop(key)
+        dict.__delitem__(key)
+        return self.__dict__.pop(key)
 
     def __delattr__(self, name):  # del CustomDict.a
-        dict.pop(key)
+        dict.__delitem__(name)
         return self.__dict__.pop(key)
