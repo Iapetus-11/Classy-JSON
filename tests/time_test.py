@@ -1,6 +1,10 @@
-from ... import classyjson
 import json
 from time import perf_counter
+import sys
+
+sys.path.append('..')
+
+import classyjson
 
 
 # Test options
