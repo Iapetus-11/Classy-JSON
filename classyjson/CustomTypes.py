@@ -1,6 +1,6 @@
 
 class CustomList(list):
-    def __init__(self, _list, threaded):
+    def __init__(self, _list):
         for i, val in enumerate(_list):
             if isinstance(val, list):
                 _list[i] = CustomList(val,)
