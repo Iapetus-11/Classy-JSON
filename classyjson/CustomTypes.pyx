@@ -29,6 +29,6 @@ class CustomDict(dict):
         return dict.__setitem__(self, name, value)
 
     def __delattr__(self, name):  # del CustomDict.a
-        popped = dict.__getitem__(key)
-        dict.__delitem__(self, key)
+        popped = dict.__getitem__(name)
+        dict.__delitem__(self, name)
         return popped
