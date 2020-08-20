@@ -12,7 +12,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/Iapetus-11/classy-json',
-    ext_modules = cythonize('classyjson/CustomTypes.pyx')
+    ext_modules = cythonize('classyjson/CustomTypes.pyx'),
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
