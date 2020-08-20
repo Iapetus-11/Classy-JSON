@@ -1,17 +1,47 @@
+import threading
+
+
+def threaded_list(_list, threaded):
+    # at max 4 chunks
+    chunked = [_list[i:i + ceil(len(_list)/4)] for i in range(0, len(_list), ceil(len(_list)/4))]
+    final = []
+
+    def worker(l):
+        for i, val in enumerate(l):
+            if isinstance(val, list):
+                l[i] = CustomList(val)
+            elif isinstance(val, dict):
+                l[i] = CustomDict(val)
+
+        final.extend(l)
+
+    threads = []
+    for i, chunk in enumerate(chunked):
+        threads.append(threading.Thread(target=worker, args=(chunk,)))
+        threads[i].start()
+
+    for thread in threads:
+        thread.join()
+
+    return final
+
 
 class CustomList(list):
-    def __init__(self, _list):
-        for i, val in enumerate(_list):
-            if isinstance(val, list):
-                _list[i] = CustomList(val)
-            elif isinstance(val, dict):
-                _list[i] = CustomDict(val)
+    def __init__(self, _list, threaded):
+        if threaded:
+            list.__init__(self, threaded_list(_list))
+        else:
+            for i, val in enumerate(_list):
+                if isinstance(val, list):
+                    _list[i] = CustomList(val)
+                elif isinstance(val, dict):
+                    _list[i] = CustomDict(val)
 
-        list.__init__(self, _list)
+            list.__init__(self, _list)
 
 
 class CustomDict(dict):
-    def __init__(self, _dict):
+    def __init__(self, _dict, threaded):
         dict.__init__(self, _dict)
 
         for key in list(_dict):
