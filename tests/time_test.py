@@ -10,15 +10,6 @@ file = 'test_large.json'
 with open(file, 'r') as f:
     raw = f.read()
 
-# Using classyjson
-print(f'classy-json test using classy-json ({iterations} iterations)')
-cj_times = []
-for i in range(iterations):
-    start = perf_counter()
-    classyjson.loads(raw)
-    cj_times.append(perf_counter() - start)
-    print(f'iteration: {i} time: {cj_times[i]}')
-
 # Using regular json
 print(f'classy-json test using regular json ({iterations} iterations)')
 jj_times = []
@@ -28,8 +19,17 @@ for i in range(iterations):
     jj_times.append(perf_counter() - start)
     print(f'iteration: {i} time: {jj_times[i]}')
 
-cj_avg = sum(cj_times) / len(cj_times)
-jj_avg = sum(jj_times) / len(jj_times)
+# Using classyjson
+print(f'classy-json test using classy-json ({iterations} iterations)')
+cj_times = []
+for i in range(iterations):
+    start = perf_counter()
+    classyjson.loads(raw)
+    cj_times.append(perf_counter() - start)
+    print(f'iteration: {i} time: {cj_times[i]}')
 
-print(f'classy-json (average time to decode data from a string): {cj_avg} seconds')
+jj_avg = sum(jj_times) / len(jj_times)
+cj_avg = sum(cj_times) / len(cj_times)
+
 print(f'json (average time to decode data from a string): {jj_avg} seconds')
+print(f'classy-json (average time to decode data from a string): {cj_avg} seconds')
