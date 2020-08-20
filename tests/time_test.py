@@ -35,5 +35,6 @@ cj_total = perf_counter() - cj_total_start
 jj_avg = sum(jj_times) / len(jj_times)
 cj_avg = sum(cj_times) / len(cj_times)
 
-print(f'json average time: {jj_avg} seconds || total time: {jj_total}')
-print(f'classy-json average time: {cj_avg} seconds || total time: {cj_total}')
+print()
+print('        json average time: {:6d} seconds || total time: {}'.format(round(jj_avg, 4), round(jj_total, 10)))
+print(' classy-json average time: {:6d} seconds || total time: {}'.format(round(cj_avg, 4), round(cj_total, 10)))
