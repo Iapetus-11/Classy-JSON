@@ -7,7 +7,8 @@ class CustomList(list):
             elif isinstance(val, dict):
                 _list[i] = CustomDict(val)
 
-        list.__init__(self, _list)
+        #list.__init__(self, _list)
+        super().__init__(_list)
 
 
 class CustomDict(dict):
@@ -18,7 +19,8 @@ class CustomDict(dict):
             elif isinstance(_dict[key], dict):
                 _dict[key] = CustomDict(_dict[key])
 
-        dict.__init__(self, _dict)
+        #dict.__init__(self, _dict)
+        super().__init__(_dict)
 
     def __getattr__(self, name):  # CustomDict.a
         return dict.__getitem__(self, name)
