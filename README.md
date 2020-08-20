@@ -1,5 +1,4 @@
-# Classy-Json ![PYPI Downloads](https://img.shields.io/pypi/dw/classy-json?color=64b594&style=plastic)
-*made by Iapetus-11*
+# Classy-Json ![PYPI Downloads](https://img.shields.io/pypi/dw/classy-json?color=64b594)
 ### An attempt at recreating the way json works in JavaScript, but in the Python programming language.
 
 ## Setup / Install
