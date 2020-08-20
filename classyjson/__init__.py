@@ -35,7 +35,7 @@ def dumps(data, skipkeys=False, ensure_ascii=True, check_circular=True, allow_na
 
 def dump(data, io, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None,
          separators=None, default=None, sort_keys=False):
-    return json.dump(data, io, , skipkeys=skipkeys, ensure_ascii=ensure_ascii, check_circular=check_circular,
+    return json.dump(data, io, skipkeys=skipkeys, ensure_ascii=ensure_ascii, check_circular=check_circular,
                      allow_nan=allow_nan, cls=cls, indent=indent, separators=separators, default=default,
                      sort_keys=sort_keys
     )
