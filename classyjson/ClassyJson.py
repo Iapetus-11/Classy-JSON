@@ -1,7 +1,7 @@
 from .CustomTypes import CustomList, CustomDict
 import json
 
-def objectify(data, threaded):
+def objectify(data):
     if isinstance(data, list):
         return CustomList(data, threaded)
     elif isinstance(data, dict):
