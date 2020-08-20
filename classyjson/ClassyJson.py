@@ -9,19 +9,19 @@ def objectify(data, threaded):
     else:
         return data
 
-def loads(data, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, threaded=False):
+def loads(data, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None):
     _data = json.loads(
         data, cls=cls, object_hook=object_hook, parse_float=parse_float, parse_int=parse_int,
         parse_constant=parse_constant, object_pairs_hook=object_pairs_hook
     )
 
-    return objectify(_data, threaded)
+    return objectify(_data,)
 
-def load(io, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, threaded=False):
+def load(io, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None):
     _data = json.load(io, cls=cls, object_hook=object_hook, parse_float=parse_float, parse_int=parse_int,
     parse_constant=parse_constant, object_pairs_hook=object_pairs_hook)
 
-    return objectify(_data, threaded)
+    return objectify(_data)
 
 def dumps(data, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None,
           separators=None, default=None, sort_keys=False):
