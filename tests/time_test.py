@@ -13,23 +13,27 @@ with open(file, 'r') as f:
 # Using regular json
 print(f'classy-json test using regular json ({iterations} iterations)')
 jj_times = []
+jj_total_start = perf_counter()
 for i in range(iterations):
     start = perf_counter()
     json.loads(raw)
     jj_times.append(perf_counter() - start)
     print(f'iteration: {i+1} time: {jj_times[i]}')
+jj_total = perf_counter() - jj_total_start
 
 # Using classyjson
 print(f'classy-json test using classy-json ({iterations} iterations)')
 cj_times = []
+cj_total_start = perf_counter()
 for i in range(iterations):
     start = perf_counter()
     classyjson.loads(raw)
     cj_times.append(perf_counter() - start)
     print(f'iteration: {i+1} time: {cj_times[i]}')
+cj_total = perf_counter() - cj_total_start
 
 jj_avg = sum(jj_times) / len(jj_times)
 cj_avg = sum(cj_times) / len(cj_times)
 
-print(f'json (average time to decode data from a string): {jj_avg} seconds')
-print(f'classy-json (average time to decode data from a string): {cj_avg} seconds')
+print(f'json average time: {jj_avg} seconds || total time: {jj_total}')
+print(f'classy-json average time: {cj_avg} seconds || total time: {cj_total}')
