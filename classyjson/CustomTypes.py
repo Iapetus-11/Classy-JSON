@@ -1,3 +1,4 @@
+
 class CustomList(list):
     def __init__(self, _list):
         for i, val in enumerate(_list):
@@ -7,6 +8,7 @@ class CustomList(list):
                 _list[i] = CustomDict(val)
 
         list.__init__(self, _list)
+
 
 class CustomDict(dict):
     def __init__(self, _dict):
