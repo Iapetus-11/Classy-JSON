@@ -13,7 +13,7 @@ class CustomList(list):
 
 class CustomDict(dict):
     def __init__(self, _dict):
-        cdef str key
+        cdef string key
         for key in list(_dict):
             if isinstance(_dict[key], list):
                 _dict[key] = CustomList(_dict[key])
