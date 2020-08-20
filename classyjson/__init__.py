@@ -1,1 +1,1 @@
-import .ClassyJson
+from .ClassyJson import *
