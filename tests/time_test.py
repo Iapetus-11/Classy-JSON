@@ -1,4 +1,4 @@
-import ..classyjson
+from ... import classyjson
 import json
 from time import perf_counter
 
