@@ -27,7 +27,7 @@ cj_times = []
 cj_total_start = perf_counter()
 for i in range(iterations):
     start = perf_counter()
-    classyjson.loads(raw, threading=True)
+    classyjson.loads(raw, threaded=True)
     cj_times.append(perf_counter() - start)
     print(f'iteration: {i+1} time: {cj_times[i]}')
 cj_total = perf_counter() - cj_total_start
