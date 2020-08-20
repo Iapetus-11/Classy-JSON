@@ -2,9 +2,9 @@
 class CustomList(list):
     def __init__(self, _list):
         for i, val in enumerate(_list):
-            if type(val) == list:
+            if isinstance(val, list):
                 _list[i] = CustomList(val,)
-            elif type(val) == dict:
+            elif isinstance(val, dict):
                 _list[i] = CustomDict(val,)
 
         list.__init__(self, _list)
@@ -13,9 +13,9 @@ class CustomList(list):
 class CustomDict(dict):
     def __init__(self, _dict):
         for key in list(_dict):
-            if type(_dict[key]) == list:
+            if isinstance(_dict[key], list):
                 _dict[key] = CustomList(_dict[key])
-            elif type(_dict[key]) == dict:
+            elif isinstance(_dict[key], dict):
                 _dict[key] = CustomDict(_dict[key])
 
         dict.__init__(self, _dict)
