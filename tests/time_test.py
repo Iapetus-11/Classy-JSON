@@ -36,5 +36,5 @@ jj_avg = sum(jj_times) / len(jj_times)
 cj_avg = sum(cj_times) / len(cj_times)
 
 print()
-print('        json average time: {:2.4f} seconds || total time: {} || total iterations: {}'.format(round(jj_avg, 4), round(jj_total, 10), iterations))
-print(' classy-json average time: {:2.4f} seconds || total time: {} || total iterations: {}'.format(round(cj_avg, 4), round(cj_total, 10), iterations))
+print('        json average time: {:2.4f} seconds || total time: {} || total iterations: {}'.format(round(jj_avg, 4), round(jj_total, 4), iterations))
+print(' classy-json average time: {:2.4f} seconds || total time: {} || total iterations: {}'.format(round(cj_avg, 4), round(cj_total, 4), iterations))
