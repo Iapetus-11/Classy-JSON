@@ -4,7 +4,7 @@ import sys
 
 sys.path.append('..')
 
-import classyjson
+import .classyjson
 
 
 # Test options
