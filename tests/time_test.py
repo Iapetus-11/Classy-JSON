@@ -4,7 +4,7 @@ from time import perf_counter
 
 
 # Test options
-iterations = 500
+iterations = 5
 file = 'test_large.json'
 
 with open(file, 'r') as f:
