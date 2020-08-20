@@ -1,4 +1,5 @@
 import setuptools
+from Cython.Build import cythonize
 
 with open('README.md', 'r') as fh:
     long_description = fh.read()
@@ -11,6 +12,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/Iapetus-11/classy-json',
+    ext_modules = cythonize('classyjson/CustomTypes.pyx')
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
