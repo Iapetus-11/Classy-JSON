@@ -10,7 +10,7 @@ class CustomList(list):
 
 class CustomDict(dict):
     def __init__(self, _dict):
-        dict.__init__(self, _dict)
+        self.dict = dict.__init__(self, _dict)
 
         for key in list(_dict):
             if isinstance(_dict[key], list):
@@ -21,17 +21,17 @@ class CustomDict(dict):
                 self.__dict__[key] = _dict[key]
 
     def __setitem__(self, key, value):  # CustomDict['a'] = 'something'
-        super()[key] = value
+        self.dict[key] = value
         self.__dict__[key] = value
 
     def __setattr__(self, name, value):  # CustomDict.a = 'something'
-        super()[name] = value
+        self.dict[name] = value
         self.__dict__[name] = value
 
     def __delitem__(self, key):  # CustomDict.pop('a')
         self.__dict__.pop(key)
-        return super().pop(key)
+        return self.dict.pop(key)
 
     def __delattr__(self, name):  # del CustomDict.a
-        super().pop(key)
+        self.dict.pop(key)
         return self.__dict__.pop(key)
