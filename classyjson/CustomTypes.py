@@ -1,55 +1,24 @@
-import threading
-from math import ceil
-
-
-def threaded_list(_list):
-    # at max 4 chunks
-    chunked = [_list[i:i + ceil(len(_list)/4)] for i in range(0, len(_list), ceil(len(_list)/4))]
-    final = []
-
-    def worker(l):
-        for i, val in enumerate(l):
-            if isinstance(val, list):
-                l[i] = CustomList(val, True)
-            elif isinstance(val, dict):
-                l[i] = CustomDict(val, True)
-
-        final.extend(l)
-
-    threads = []
-    for i, chunk in enumerate(chunked):
-        threads.append(threading.Thread(target=worker, args=(chunk,)))
-        threads[i].start()
-
-    for thread in threads:
-        thread.join()
-
-    return final
-
 
 class CustomList(list):
     def __init__(self, _list, threaded):
-        if threaded:
-            list.__init__(self, threaded_list(_list))
-        else:
-            for i, val in enumerate(_list):
-                if isinstance(val, list):
-                    _list[i] = CustomList(val, threaded)
-                elif isinstance(val, dict):
-                    _list[i] = CustomDict(val, threaded)
+        for i, val in enumerate(_list):
+            if isinstance(val, list):
+                _list[i] = CustomList(val,)
+            elif isinstance(val, dict):
+                _list[i] = CustomDict(val,)
 
-            list.__init__(self, _list)
+        list.__init__(self, _list)
 
 
 class CustomDict(dict):
-    def __init__(self, _dict, threaded):
+    def __init__(self, _dict):
         dict.__init__(self, _dict)
 
         for key in list(_dict):
             if isinstance(_dict[key], list):
-                dict.__setitem__(self, key, CustomList(_dict[key], threaded))
+                dict.__setitem__(self, key, CustomList(_dict[key]))
             elif isinstance(_dict[key], dict):
-                dict.__setitem__(self, key, CustomDict(_dict[key], threaded))
+                dict.__setitem__(self, key, CustomDict(_dict[key]))
             else:
                 dict.__setitem__(self, key, _dict[key])
 
