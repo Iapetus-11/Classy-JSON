@@ -17,7 +17,7 @@ for i in range(iterations):
     start = perf_counter()
     json.loads(raw)
     jj_times.append(perf_counter() - start)
-    print(f'iteration: {i} time: {jj_times[i]}')
+    print(f'iteration: {i+1} time: {jj_times[i]}')
 
 # Using classyjson
 print(f'classy-json test using classy-json ({iterations} iterations)')
@@ -26,7 +26,7 @@ for i in range(iterations):
     start = perf_counter()
     classyjson.loads(raw)
     cj_times.append(perf_counter() - start)
-    print(f'iteration: {i} time: {cj_times[i]}')
+    print(f'iteration: {i+1} time: {cj_times[i]}')
 
 jj_avg = sum(jj_times) / len(jj_times)
 cj_avg = sum(cj_times) / len(cj_times)
