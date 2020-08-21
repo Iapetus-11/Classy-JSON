@@ -1,17 +1,11 @@
 
-def objectify(data, key):
-    if isinstance(data, list):
-        data[key] = CustomList(data[key])
-    elif isinstance(data, dict):
-        data[key] = CustomDict(data[key])
-
-    return data[key]
-
-
 class CustomList(list):
     def __init__(self, _list):
         for i, val in enumerate(_list):
-            objectify(_list, i)
+            if isinstance(val, list):
+                _list[i] = CustomList(val)
+            elif isinstance(val, dict):
+                _list[i] = CustomDict(val)
 
         list.__init__(self, _list)
 
@@ -19,7 +13,10 @@ class CustomList(list):
 class CustomDict(dict):
     def __init__(self, _dict):
         for key in list(_dict):
-            objectify(_dict, key)
+            if isinstance(_dict[key], list):
+                _dict[key] = CustomList(_dict[key])
+            elif isinstance(_dict[key], dict):
+                _dict[key] = CustomDict(_dict[key])
 
         dict.__init__(self, _dict)
 
@@ -31,7 +28,7 @@ class CustomDict(dict):
             return dict.__setitem__(self, name, CustomList(value))
         elif isinstance(value, dict):
             return dict.__setitem__(self, name, CustomDict(value))
-
+            
         return dict.__setitem__(self, name, value)
 
     def __delattr__(self, name):  # del CustomDict.a
