@@ -25,11 +25,8 @@ class CustomDict(dict):
 
         dict.__init__(self, _dict)
 
-    def __getattr__(self, name):  # CustomDict.a
-        return dict.__getitem__(self, name)
+    __getattr__ = dict.__getitem__
+    __delattr__ = dict.__delitem__
 
     def __setattr__(self, name, value):  # CustomDict.a = 'something'
         return dict.__setitem__(self, name, nice(value))
-
-    def __delattr__(self, name):  # del CustomDict.a
-        dict.__delitem__(self, name)
