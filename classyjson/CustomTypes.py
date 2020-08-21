@@ -21,5 +21,5 @@ class CustomDict(dict):
     def __getattr__(self, name):  # CustomDict.a
         return dict.__getitem__(self, name)
 
-    __setattr__ = __setitem__
-    __delattr__ = __delitem__
+    __setattr__ = dict.__setitem__
+    __delattr__ = dict.__delitem__
