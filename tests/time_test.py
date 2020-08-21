@@ -4,7 +4,7 @@ import classyjson
 
 
 # Test options
-iterations = 1000
+iterations = 75
 file = 'test_large.json'
 
 with open(file, 'r') as f:
