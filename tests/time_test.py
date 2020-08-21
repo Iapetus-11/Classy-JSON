@@ -37,6 +37,8 @@ print('\n Loading json:')
 print('        json average time: {:2.4f} seconds || total time: {} || total iterations: {}'.format(round(jj_avg, 4), round(jj_total, 4), iterations))
 print(' classy-json average time: {:2.4f} seconds || total time: {} || total iterations: {}'.format(round(cj_avg, 4), round(cj_total, 4), iterations))
 
+iterations = 10000
+
 # Using regular json
 print(f'classy-json test using regular json ({iterations} iterations)')
 jj_times = []
