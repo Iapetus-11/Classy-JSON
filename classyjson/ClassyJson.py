@@ -1,11 +1,11 @@
-from .CustomTypes import CustomList, CustomDict
+from .CustomTypes import NiceList, NiceDict
 import json
 
 def objectify(data):
     if isinstance(data, list):
-        return CustomList(data)
+        return NiceList(data)
     elif isinstance(data, dict):
-        return CustomDict(data)
+        return NiceDict(data)
     else:
         return data
 
