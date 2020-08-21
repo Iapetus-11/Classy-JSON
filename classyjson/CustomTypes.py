@@ -18,11 +18,6 @@ class CustomDict(dict):
     def __init__(self, _dict):
         dict.__init__(self, {k: nice(v) for k, v, in _dict.items()})
 
-    def __getattr__(self, name):  # CustomDict.a
-        return dict.__getitem__(self, name)
-
-    def __setattr__(self, name, value):  # CustomDict.a = 'something'
-        dict.__setitem__(self, name, nice(value))
-
-    def __delattr__(self, name):  # del CustomDict.a
-        dict.__delitem__(self, name)
+    __getattr__ = __getitem__
+    __setattr__ = __setitem__
+    __delattr__ = __delitem__
