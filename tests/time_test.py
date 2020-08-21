@@ -78,7 +78,7 @@ jj_total = perf_counter() - jj_total_start
 
 # Using classyjson's custom dicts
 cj_times = []
-cj = {'b': {'hellothere': ['general kenobi']}}
+cj = classyjson.CustomTypes.objectify({'b': {'hellothere': ['general kenobi']}})
 cj_total_start = perf_counter()
 for _ in range(iterations):
     start = perf_counter()
