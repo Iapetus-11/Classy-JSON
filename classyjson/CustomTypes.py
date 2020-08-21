@@ -8,10 +8,12 @@ def nice(val):
 
     return val
 
+
 def branchless_nice(val):
     _list = isinstance(val, list)*'CustomList(val)'
     _dict = isinstance(val, dict)*'CustomDict(val)'
     return eval(_list + _dict + (1 - (len(_list) + len(_dict)))*'val')
+
 
 class CustomList(list):
     def __init__(self, _list):
