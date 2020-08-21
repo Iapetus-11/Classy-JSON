@@ -28,7 +28,7 @@ class CustomDict(dict):
             return dict.__setitem__(self, name, CustomList(value))
         elif isinstance(value, dict):
             return dict.__setitem__(self, name, CustomDict(value))
-            
+
         return dict.__setitem__(self, name, value)
 
     def __delattr__(self, name):  # del CustomDict.a
