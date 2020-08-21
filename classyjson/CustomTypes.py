@@ -2,7 +2,8 @@
 def nice(val):
     if isinstance(val, list):
         return CustomList(val)
-    elif isinstance(val, dict):
+
+    if isinstance(val, dict):
         return CustomDict(val)
 
     return val
