@@ -11,12 +11,19 @@ def nice(val):
 
 class CustomList(list):
     def __init__(self, _list):
-        list.__init__(self, map(nice, _list))
+        map(nice, _list)
+        list.__init__(self, _list)
 
 
 class CustomDict(dict):
     def __init__(self, _dict):
-        dict.__init__(self, {k: nice(v) for k, v, in _dict.items()})
+        for key in list(_dict):
+            if isinstance(_dict[key], list):
+                _dict[key] = CustomList(_dict[key])
+            elif isinstance(_dict[key], dict):
+                _dict[key] = CustomDict(_dict[key])
+
+        dict.__init__(self, _dict)
 
     def __getattr__(self, name):  # CustomDict.a
         return dict.__getitem__(self, name)
