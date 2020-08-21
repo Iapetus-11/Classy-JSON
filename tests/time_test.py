@@ -11,7 +11,6 @@ with open(file, 'r') as f:
     raw = f.read()
 
 # Using regular json
-print(f'classy-json test using regular json ({iterations} iterations)')
 jj_times = []
 jj_total_start = perf_counter()
 for _ in range(iterations):
@@ -21,7 +20,6 @@ for _ in range(iterations):
 jj_total = perf_counter() - jj_total_start
 
 # Using classyjson
-print(f'classy-json test using classy-json ({iterations} iterations)')
 cj_times = []
 cj_total_start = perf_counter()
 for _ in range(iterations):
