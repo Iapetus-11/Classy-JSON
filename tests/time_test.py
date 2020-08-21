@@ -37,9 +37,9 @@ print(' classy-json average time: {:2.4f} seconds || total time: {} || total ite
 
 iterations = 1000000
 
-# Using regular json
+# Using regular dictionaries
 jj_times = []
-jj = json.loads(raw)
+jj = {}
 jj_total_start = perf_counter()
 for _ in range(iterations):
     start = perf_counter()
@@ -47,9 +47,9 @@ for _ in range(iterations):
     jj_times.append(perf_counter() - start)
 jj_total = perf_counter() - jj_total_start
 
-# Using classyjson
+# Using classyjson's custom dicts
 cj_times = []
-cj = classyjson.loads(raw)
+cj = {}
 cj_total_start = perf_counter()
 for _ in range(iterations):
     start = perf_counter()
