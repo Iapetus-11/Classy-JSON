@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='classy-json',
-    version='1.7.6',
+    version='1.8.0',
     author='Iapetus-11',
     description='An attempt to recreate the way json behaves in Javascript, but in Python',
     long_description=long_description,
