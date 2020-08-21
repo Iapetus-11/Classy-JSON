@@ -22,7 +22,7 @@ class CustomDict(dict):
         return dict.__getitem__(self, name)
 
     def __setattr__(self, name, value):  # CustomDict.a = 'something'
-        return dict.__setitem__(self, name, nice(value))
+        dict.__setitem__(self, name, nice(value))
 
     def __delattr__(self, name):  # del CustomDict.a
         dict.__delitem__(self, name)
