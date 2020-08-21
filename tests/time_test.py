@@ -45,6 +45,8 @@ for _ in range(iterations):
     start = perf_counter()
     jj['a'] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     jj['a'] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    jj['b'] = 'bbc'
+    jj['b'] = 'bbc'
     jj_times.append(perf_counter() - start)
 jj_total = perf_counter() - jj_total_start
 
@@ -56,12 +58,13 @@ for _ in range(iterations):
     start = perf_counter()
     cj.a = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     jj['a'] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    cj.b = 'bbc'
     cj_times.append(perf_counter() - start)
 cj_total = perf_counter() - cj_total_start
 
 jj_avg = sum(jj_times) / len(jj_times)
 cj_avg = sum(cj_times) / len(cj_times)
 
-print('\n\n setting an attribute / key to a value twice:')
+print('\n\n setting an attribute / key to a value 4x:')
 print(' regular dicts: {:2.8f} seconds || total time: {} || total iterations: {}'.format(round(jj_avg, 8), round(jj_total, 4), iterations))
 print('   classy-json: {:2.8f} seconds || total time: {} || total iterations: {}'.format(round(cj_avg, 8), round(cj_total, 4), iterations))
