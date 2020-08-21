@@ -10,8 +10,7 @@ def nice(val):
 
 class CustomList(list):
     def __init__(self, _list):
-        map(nice, _list)
-        list.__init__(self, _list)
+        list.__init__(self, map(nice, _list))
 
 
 class CustomDict(dict):
