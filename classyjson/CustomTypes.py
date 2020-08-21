@@ -17,13 +17,7 @@ class NiceList(list):
 
 class NiceDict(dict):
     def __init__(self, _dict):
-        for key in list(_dict):
-            if isinstance(_dict[key], list):
-                _dict[key] = NiceList(_dict[key])
-            elif isinstance(_dict[key], dict):
-                _dict[key] = NiceDict(_dict[key])
-
-        dict.__init__(self, _dict)
+        dict.__init__(self, {k:nice(v) for (k, v) in _dict.items()})
 
     __getattr__ = dict.__getitem__
     __delattr__ = dict.__delitem__
