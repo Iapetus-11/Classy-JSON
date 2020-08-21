@@ -43,9 +43,6 @@ jj = json.loads(raw)
 jj_total_start = perf_counter()
 for _ in range(iterations):
     start = perf_counter()
-    jj['a'] = 'a'
-    jj['a'] = 'a'
-    jj['a'] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     jj['a'] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     jj_times.append(perf_counter() - start)
 jj_total = perf_counter() - jj_total_start
@@ -56,9 +53,6 @@ cj = classyjson.loads(raw)
 cj_total_start = perf_counter()
 for _ in range(iterations):
     start = perf_counter()
-    cj['a'] = 'a'
-    cj.a = 'a'
-    cj['a'] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     cj.a = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     cj_times.append(perf_counter() - start)
 cj_total = perf_counter() - cj_total_start
