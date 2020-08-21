@@ -61,5 +61,5 @@ jj_avg = sum(jj_times) / len(jj_times)
 cj_avg = sum(cj_times) / len(cj_times)
 
 print('\n\n setting an attribute / key to a value:')
-print('        json average time: {:2.6f} seconds || total time: {} || total iterations: {}'.format(round(jj_avg, 6), round(jj_total, 4), iterations))
-print(' classy-json average time: {:2.6f} seconds || total time: {} || total iterations: {}'.format(round(cj_avg, 6), round(cj_total, 4), iterations))
+print(' via slicing ([\'a\']): {:2.6f} seconds || total time: {} || total iterations: {}'.format(round(jj_avg, 6), round(jj_total, 4), iterations))
+print('     via . access (.a): {:2.6f} seconds || total time: {} || total iterations: {}'.format(round(cj_avg, 6), round(cj_total, 4), iterations))
