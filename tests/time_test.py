@@ -60,6 +60,35 @@ cj_total = perf_counter() - cj_total_start
 jj_avg = sum(jj_times) / len(jj_times)
 cj_avg = sum(cj_times) / len(cj_times)
 
-print('\n\n setting an attribute / key to a value 4x:')
+print('\n\n setting an attribute / key to a value:')
+print(' regular dicts: {:2.8f} seconds || total time: {} || total iterations: {}'.format(round(jj_avg, 8), round(jj_total, 4), iterations))
+print('   classy-json: {:2.8f} seconds || total time: {} || total iterations: {}'.format(round(cj_avg, 8), round(cj_total, 4), iterations))
+
+iterations = 1000000
+
+# Using regular dictionaries
+jj_times = []
+jj = {'b': {'hellothere': ['general kenobi']}}
+jj_total_start = perf_counter()
+for _ in range(iterations):
+    start = perf_counter()
+    jj['b']['hellothere']
+    jj_times.append(perf_counter() - start)
+jj_total = perf_counter() - jj_total_start
+
+# Using classyjson's custom dicts
+cj_times = []
+cj = {'b': {'hellothere': ['general kenobi']}}
+cj_total_start = perf_counter()
+for _ in range(iterations):
+    start = perf_counter()
+    cj.b.hellothere
+    cj_times.append(perf_counter() - start)
+cj_total = perf_counter() - cj_total_start
+
+jj_avg = sum(jj_times) / len(jj_times)
+cj_avg = sum(cj_times) / len(cj_times)
+
+print('\n\n getting an attribute / key:')
 print(' regular dicts: {:2.8f} seconds || total time: {} || total iterations: {}'.format(round(jj_avg, 8), round(jj_total, 4), iterations))
 print('   classy-json: {:2.8f} seconds || total time: {} || total iterations: {}'.format(round(cj_avg, 8), round(cj_total, 4), iterations))
