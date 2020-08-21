@@ -5,6 +5,8 @@ def objectify(data, key):
     elif isinstance(data, dict):
         data[key] = CustomDict(data[key])
 
+    return data[key]
+
 
 class CustomList(list):
     def __init__(self, _list):
@@ -25,6 +27,11 @@ class CustomDict(dict):
         return dict.__getitem__(self, name)
 
     def __setattr__(self, name, value):  # CustomDict.a = 'something'
+        if isinstance(value, list):
+            return dict.__setitem__(self, name, CustomList(value))
+        elif isinstance(value, dict):
+            return dict.__setitem__(self, name, CustomDict(value))
+
         return dict.__setitem__(self, name, value)
 
     def __delattr__(self, name):  # del CustomDict.a
