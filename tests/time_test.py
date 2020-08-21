@@ -32,8 +32,8 @@ jj_avg = sum(jj_times) / len(jj_times)
 cj_avg = sum(cj_times) / len(cj_times)
 
 print('\n Loading json:')
-print('        json average time: {:2.4f} seconds || total time: {} || total iterations: {}'.format(round(jj_avg, 4), round(jj_total, 3), iterations))
-print(' classy-json average time: {:2.4f} seconds || total time: {} || total iterations: {}'.format(round(cj_avg, 4), round(cj_total, 3), iterations))
+print('        json average time: {:^2.4f} seconds || total time: {} || total iterations: {}'.format(round(jj_avg, 4), round(jj_total, 3), iterations))
+print(' classy-json average time: {:^2.4f} seconds || total time: {} || total iterations: {}'.format(round(cj_avg, 4), round(cj_total, 3), iterations))
 
 iterations = 1000000
 
@@ -61,8 +61,8 @@ jj_avg = sum(jj_times) / len(jj_times)
 cj_avg = sum(cj_times) / len(cj_times)
 
 print('\n\n setting an attribute / key to a value:')
-print(' regular dicts: {:2.8f} seconds || total time: {} || total iterations: {}'.format(round(jj_avg, 8), round(jj_total, 4), iterations))
-print('   classy-json: {:2.8f} seconds || total time: {} || total iterations: {}'.format(round(cj_avg, 8), round(cj_total, 4), iterations))
+print(' regular dicts: {:^2.8f} seconds || total time: {} || total iterations: {}'.format(round(jj_avg, 8), round(jj_total, 4), iterations))
+print('   classy-json: {:^2.8f} seconds || total time: {} || total iterations: {}'.format(round(cj_avg, 8), round(cj_total, 4), iterations))
 
 iterations = 1000000
 
@@ -90,5 +90,5 @@ jj_avg = sum(jj_times) / len(jj_times)
 cj_avg = sum(cj_times) / len(cj_times)
 
 print('\n\n getting an attribute / key:')
-print(' regular dicts: {:2.8f} seconds || total time: {} || total iterations: {}'.format(round(jj_avg, 8), round(jj_total, 4), iterations))
-print('   classy-json: {:2.8f} seconds || total time: {} || total iterations: {}'.format(round(cj_avg, 8), round(cj_total, 4), iterations))
+print(' regular dicts: {:^2.8f} seconds || total time: {} || total iterations: {}'.format(round(jj_avg, 8), round(jj_total, 4), iterations))
+print('   classy-json: {:^2.8f} seconds || total time: {} || total iterations: {}'.format(round(cj_avg, 8), round(cj_total, 4), iterations))
