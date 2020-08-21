@@ -1,12 +1,15 @@
 
+def nice(val):
+    if isinstance(val, list):
+        return CustomList(val)
+    elif isinstance(val, dict):
+        return CustomDict(val)
+
+    return val
+
 class CustomList(list):
     def __init__(self, _list):
-        for i, val in enumerate(_list):
-            if isinstance(val, list):
-                _list[i] = CustomList(val)
-            elif isinstance(val, dict):
-                _list[i] = CustomDict(val)
-
+        map(nice, _list)
         list.__init__(self, _list)
 
 
@@ -24,12 +27,7 @@ class CustomDict(dict):
         return dict.__getitem__(self, name)
 
     def __setattr__(self, name, value):  # CustomDict.a = 'something'
-        if isinstance(value, list):
-            return dict.__setitem__(self, name, CustomList(value))
-        elif isinstance(value, dict):
-            return dict.__setitem__(self, name, CustomDict(value))
-
-        return dict.__setitem__(self, name, value)
+        return dict.__setitem__(self, name, nice(value))
 
     def __delattr__(self, name):  # del CustomDict.a
         dict.__delitem__(self, name)
