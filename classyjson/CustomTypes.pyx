@@ -1,7 +1,6 @@
 
 class CustomList(list):
     def __init__(self, _list):
-        cdef int i
         for i, val in enumerate(_list):
             if isinstance(val, list):
                 _list[i] = CustomList(val)
@@ -13,7 +12,6 @@ class CustomList(list):
 
 class CustomDict(dict):
     def __init__(self, _dict):
-        cdef str key
         for key in list(_dict):
             if isinstance(_dict[key], list):
                 _dict[key] = CustomList(_dict[key])
