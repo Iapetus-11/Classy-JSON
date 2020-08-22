@@ -24,3 +24,7 @@ python3 setup.py build install
 * Fork the repository
 * Make any changes
 * Submit a pull request
+
+## How do I use classy-json?
+* All functions from the built in json module are supported
+* The only difference is that you can now access dictionaries via `dict.key` as well as `dict['key']`
