@@ -1,4 +1,5 @@
 from .CustomTypes import NiceList, NiceDict
+from json import dump, dumps
 import json
 
 def objectify(data):
@@ -22,17 +23,3 @@ def load(io, cls=None, object_hook=None, parse_float=None, parse_int=None, parse
     parse_constant=parse_constant, object_pairs_hook=object_pairs_hook)
 
     return objectify(_data)
-
-def dumps(data, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None,
-          separators=None, default=None, sort_keys=False):
-    return json.dumps(data, skipkeys=skipkeys, ensure_ascii=ensure_ascii, check_circular=check_circular,
-                      allow_nan=allow_nan, cls=cls, indent=indent, separators=separators, default=default,
-                      sort_keys=sort_keys
-    )
-
-def dump(data, io, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None,
-         separators=None, default=None, sort_keys=False):
-    return json.dump(data, io, skipkeys=skipkeys, ensure_ascii=ensure_ascii, check_circular=check_circular,
-                     allow_nan=allow_nan, cls=cls, indent=indent, separators=separators, default=default,
-                     sort_keys=sort_keys
-    )
