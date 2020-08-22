@@ -1,5 +1,6 @@
 from .CustomTypes import NiceList, NiceDict
 from json import *
+import json
 
 def objectify(data):
     if isinstance(data, list):
