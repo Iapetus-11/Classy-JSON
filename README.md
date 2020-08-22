@@ -20,11 +20,11 @@ cd classy-json
 python3 setup.py build install
 ```
 
+## How do I use classy-json?
+* All functions from the built in json module are supported! [json module docs](https://docs.python.org/3/library/json.html)
+* The only difference is that you can now access dictionaries via `dict.key` as well as `dict['key']`
+
 ## Contribution
 * Fork the repository
 * Make any changes
 * Submit a pull request
-
-## How do I use classy-json?
-* All functions from the built in json module are supported! [json module docs](https://docs.python.org/3/library/json.html)
-* The only difference is that you can now access dictionaries via `dict.key` as well as `dict['key']`
