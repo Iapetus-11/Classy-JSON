@@ -11,7 +11,7 @@ def nice(val):
 
 class NiceList(list):
     def __init__(self, _list: list = []):
-        list.__init__(self, map(nice, _list))
+        list.__init__(self, [*map(nice, _list)])
 
 
 class NiceDict(dict):
