@@ -10,12 +10,12 @@ def nice(val):
 
 
 class NiceList(list):
-    def __init__(self, _list: list):
+    def __init__(self, _list: list = []):
         list.__init__(self, map(nice, _list))
 
 
 class NiceDict(dict):
-    def __init__(self, _dict: dict):
+    def __init__(self, _dict: dict = {}):
         dict.__init__(self, {k:nice(v) for (k, v) in _dict.items()})
 
     __getattr__ = dict.__getitem__
