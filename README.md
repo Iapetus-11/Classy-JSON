@@ -24,6 +24,7 @@ python3 setup.py build install
 * All functions from the built in json module are supported! [json module docs](https://docs.python.org/3/library/json.html)
 * The only difference is that you can now access dictionaries via `dict.key` as well as `dict['key']`
 * Note: using `dict.key` is about 2-2.5x slower if you're first accessing the value at that key (as it uses "lazy" maps) than using `dict['key']`, however, using `dict['key']` is just as fast as in normal Python dictionaries.
+* You can also use `classyjson.classify(Union[dict, list, actually anything])` to turn a preexisting dictionary or list into a ClassyDict or ClassyList object
 
 ## Contribution
 * Fork the repository
