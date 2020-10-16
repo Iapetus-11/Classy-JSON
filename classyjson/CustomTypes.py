@@ -25,4 +25,4 @@ class ClassyDict(dict):
         return dict.__setitem__(self, name, classify(value))
 
     def update(self, _dict: dict):
-        return cj.classify(dict.update(self, _dict)))
+        return cj.classify(dict.update(self, _dict))
