@@ -23,6 +23,3 @@ class ClassyDict(dict):
 
     def __setattr__(self, name, value):  # ClassyDict.a = 'something'
         return dict.__setitem__(self, name, classify(value))
-
-    def update(self, _dict: dict):
-        return cj.classify(dict.update(self, _dict))
