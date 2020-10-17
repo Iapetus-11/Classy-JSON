@@ -1,4 +1,4 @@
-from .CustomTypes import *
+from .Types import *
 from json import *
 import json
 
