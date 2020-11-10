@@ -25,3 +25,6 @@ class ClassyDict(dict):
 
     def __setattr__(self, name, value):  # ClassyDict.a = 'something'
         return dict.__setitem__(self, name, classify(value))
+
+    def copy(self):
+        return classify(dict.copy(self))
