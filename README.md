@@ -1,5 +1,5 @@
 # Classy-Json ![PYPI Downloads](https://img.shields.io/pypi/dw/classy-json?color=64b594) ![PYPI Version](https://img.shields.io/pypi/v/classy-json.svg)
-### An attempt at recreating the way json works in JavaScript, but in the Python programming language.
+### `dict.key` (Dot access) for Python dictionaries
 
 ## How do I use Classy-Json?
 * All functions from the built in json module are supported! [json module docs](https://docs.python.org/3/library/json.html)
