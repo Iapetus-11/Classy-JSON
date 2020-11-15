@@ -33,11 +33,11 @@ python3 -m pip install classy-json
 ### Manually:
 * Clone the repository
 ```
-git clone https://github.com/Iapetus-11/classy-json.git
+git clone https://github.com/Iapetus-11/Classy-Json.git
 ```
 * cd into the directory
 ```
-cd classy-json
+cd Classy-Json
 ```
 * Run setup.py
 ```
