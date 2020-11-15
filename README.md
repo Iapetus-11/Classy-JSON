@@ -1,7 +1,7 @@
-# Classy-Json ![PYPI Downloads](https://img.shields.io/pypi/dw/classy-json?color=64b594) ![PYPI Version](https://img.shields.io/pypi/v/classy-json.svg)
+# Classy-JSON ![PYPI Downloads](https://img.shields.io/pypi/dw/classy-json?color=64b594) ![PYPI Version](https://img.shields.io/pypi/v/classy-json.svg)
 ### `dict.key` (Dot access) for Python dictionaries
 
-## How do I use Classy-Json?
+## How do I use Classy-JSON?
 * All functions from the built in json module are supported! [json module docs](https://docs.python.org/3/library/json.html)
 * The only difference is that you can now access dictionaries via `dict.key` as well as `dict['key']`
 * Note: using `dict.key` is about 2-2.5x slower \[in some cases\] than using `dict['key']`, however, using `dict['key']` is just as fast as in normal Python dictionaries. For most use cases, this difference is negligible. 
@@ -33,11 +33,11 @@ python3 -m pip install classy-json
 ### Manually:
 * Clone the repository
 ```
-git clone https://github.com/Iapetus-11/Classy-Json.git
+git clone https://github.com/Iapetus-11/Classy-JSON.git
 ```
 * cd into the directory
 ```
-cd Classy-Json
+cd Classy-JSON
 ```
 * Run setup.py
 ```
