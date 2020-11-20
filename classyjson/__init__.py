@@ -8,16 +8,10 @@ from json import *
 
 from .types import *
 
-def loads(data, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None):
-    _data = json_loads(
-        data, cls=cls, object_hook=object_hook, parse_float=parse_float, parse_int=parse_int,
-        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook
-    )
-
+def loads(*args, **kwargs):
+    _data = json_loads(*args, **kwargs)
     return classify(_data)
 
-def load(io, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None):
-    _data = json_load(io, cls=cls, object_hook=object_hook, parse_float=parse_float, parse_int=parse_int,
-    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook)
-
+def load(*args, **kwargs):
+    _data = json_load(*args, **kwargs)
     return classify(_data)
