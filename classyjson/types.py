@@ -9,7 +9,7 @@ def classify(thing):
     if isinstance(thing, dict):
         return ClassyDict(thing)
 
-    if issubclass(thing, list) or issubclass(thing, tuple):
+    if isinstance(thing, list) or isinstance(thing, tuple):
         return type(thing)(classify(item) for item in thing)
 
     return thing
