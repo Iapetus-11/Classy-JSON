@@ -1,3 +1,8 @@
+"""
+Overrides the json module's loads and load functions,
+and gather the ClassyTypes
+"""
+
 from .Types import *
 from json import *
 import json
