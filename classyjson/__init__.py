@@ -8,7 +8,7 @@ from json import loads as json_loads
 from json import load as json_load
 from json import *
 
-from .types import *
+from .types import classify, ClassyDict
 
 def loads(*args, **kwargs):
     """Override loads function"""
