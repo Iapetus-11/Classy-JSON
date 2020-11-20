@@ -12,10 +12,16 @@ def classify(thing):
         return ClassyDict(thing)
 
     if isinstance(thing, Iterable):
-        return [classify(item) for item in thing]
+        try:
+            return [classify(item) for item in thing]
+        except Exception:
+            return thing
 
     if isinstance(thing, Mapping):
-        return {k:classify(v) for (k, v) in thing.items()}
+        try:
+            return {k:classify(v) for (k, v) in thing.items()}
+        except Exception:
+            return thing
 
     return thing
 
