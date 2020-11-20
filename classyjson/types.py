@@ -4,7 +4,7 @@ Contains the ClassyTypes and the classify function
 
 def classify(val):
     if isinstance(val, list):
-        return NiceList(val)
+        return ClassyList(val)
 
     if isinstance(val, dict):
         return ClassyDict(val)
@@ -12,7 +12,7 @@ def classify(val):
     return val
 
 
-class NiceList(list):
+class ClassyList(list):
     def __init__(self, _list=None):
         if _list is None:
             _list = []
