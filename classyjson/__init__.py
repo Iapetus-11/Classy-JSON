@@ -1,5 +1,6 @@
-
-
+"""
+Dot-access for Python dictionaries and more
+"""
 
 from .ClassyJson import *
 from .Types import *
