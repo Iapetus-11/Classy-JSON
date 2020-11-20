@@ -2,6 +2,8 @@
 Dot-access for Python dictionaries and more
 """
 
+__version__ = '2.3.0'
+
 from json import loads as json_loads
 from json import load as json_load
 from json import *
