@@ -2,7 +2,7 @@
 Contains the ClassyTypes and the classify function
 """
 
-from collections.abc import Iterable, Mapping
+from collections.abc import Iterable
 
 
 def classify(thing):
@@ -11,17 +11,11 @@ def classify(thing):
     if isinstance(thing, dict):
         return ClassyDict(thing)
 
-    if isinstance(thing, Iterable):
-        try:
-            return [classify(item) for item in thing]
-        except Exception:
-            return thing
+    if isinstance(thing, list):
+        return [classify(item) for item in thing]
 
-    if isinstance(thing, Mapping):
-        try:
-            return {k:classify(v) for (k, v) in thing.items()}
-        except Exception:
-            return thing
+    if isinstance(thing, tuple):
+        return tuple(classify(item) for item in thing)
 
     return thing
 
