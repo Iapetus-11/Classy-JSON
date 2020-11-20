@@ -2,26 +2,22 @@
 Contains the ClassyTypes and the classify function
 """
 
-def classify(val):
+from collections.abc import Iterable, Mapping
+
+
+def classify(thing):
     """Used to recursively convert regular containers into ClassyDicts"""
 
-    if isinstance(val, list):
-        return ClassyList(val)
+    if isinstance(thing, dict):
+        return ClassyDict(thing)
 
-    if isinstance(val, dict):
-        return ClassyDict(val)
+    if isinstance(thing, Iterable):
+        return [classify(item) for item in thing]
 
-    return val
+    if isinstance(thing, Mapping):
+        return {k:classify(v) for (k, v) in thing.items()}
 
-
-class ClassyList(list):
-    """list subclass required for recursion"""
-
-    def __init__(self, _list=None):
-        if _list is None:
-            _list = []
-
-        list.__init__(self, map(classify, _list))
+    return thing
 
 
 class ClassyDict(dict):
