@@ -16,7 +16,7 @@ class NiceList(list):
     def __init__(self, _list=None):
         if _list is None:
             _list = []
-            
+
         list.__init__(self, map(classify, _list))
 
 
