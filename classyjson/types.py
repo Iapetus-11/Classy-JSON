@@ -2,8 +2,6 @@
 Contains the ClassyTypes and the classify function
 """
 
-from collections.abc import Iterable
-
 
 def classify(thing):
     """Used to recursively convert regular containers into ClassyDicts"""
