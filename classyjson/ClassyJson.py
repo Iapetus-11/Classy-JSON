@@ -3,7 +3,7 @@ Overrides the json module's loads and load functions,
 and gather the ClassyTypes
 """
 
-from .Types import *
+from .Types import classify
 from json import *
 import json
 
