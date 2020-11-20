@@ -11,11 +11,8 @@ def classify(thing):
     if isinstance(thing, dict):
         return ClassyDict(thing)
 
-    if isinstance(thing, list):
-        return [classify(item) for item in thing]
-
-    if isinstance(thing, tuple):
-        return tuple(classify(item) for item in thing)
+    if issubclass(thing, list) or issubclass(thing, tuple):
+        return type(thing)(classify(item) for item in thing)
 
     return thing
 
