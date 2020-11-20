@@ -14,13 +14,17 @@ def classify(val):
 
 class NiceList(list):
     def __init__(self, _list=None):
-        if _list is None: _list = []
+        if _list is None:
+            _list = []
+            
         list.__init__(self, map(classify, _list))
 
 
 class ClassyDict(dict):
     def __init__(self, _dict=None):
-        if _dict is None: _dict = {}
+        if _dict is None:
+            _dict = {}
+
         dict.__init__(self, {k:classify(v) for (k, v) in _dict.items()})
 
     __getattr__ = dict.__getitem__
