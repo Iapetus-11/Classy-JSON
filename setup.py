@@ -8,7 +8,7 @@ setuptools.setup(
     name='classy-json',
     version=__version__,
     author='Iapetus-11',
-    description='An attempt to recreate the way json behaves in Javascript, but in Python',
+    description='Dot access for Python dictionaries',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/Iapetus-11/classy-json',
