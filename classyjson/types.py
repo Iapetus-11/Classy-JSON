@@ -3,6 +3,8 @@ Contains the ClassyTypes and the classify function
 """
 
 def classify(val):
+    """Used to recursively convert regular containers into ClassyDicts"""
+
     if isinstance(val, list):
         return ClassyList(val)
 
@@ -13,6 +15,8 @@ def classify(val):
 
 
 class ClassyList(list):
+    """list subclass required for recursion"""
+
     def __init__(self, _list=None):
         if _list is None:
             _list = []
@@ -21,6 +25,8 @@ class ClassyList(list):
 
 
 class ClassyDict(dict):
+    """dict subclass required for dot access"""
+
     def __init__(self, _dict=None):
         if _dict is None:
             _dict = {}
