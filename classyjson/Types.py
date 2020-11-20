@@ -1,3 +1,6 @@
+"""
+Contains the ClassyTypes and the classify function
+"""
 
 def classify(val):
     if isinstance(val, list):
