@@ -1,4 +1,4 @@
-# Classy-JSON ![Code Quality](https://www.codefactor.io/repository/github/iapetus-11/classy-json/badge) ![PYPI Version](https://img.shields.io/pypi/v/classy-json.svg) ![PYPI Downloads](https://img.shields.io/pypi/dw/classy-json?color=64b594) ![Views](https://api.ghprofile.me/view?username=iapetus-11.classy-json&color=51B780&label=views&style=flat)
+# Classy-JSON ![Code Quality](https://www.codefactor.io/repository/github/iapetus-11/classy-json/badge) ![PYPI Version](https://img.shields.io/pypi/v/classy-json.svg) ![PYPI Downloads](https://img.shields.io/pypi/dw/classy-json?color=0FAE6E) ![Views](https://api.ghprofile.me/view?username=iapetus-11.classy-json&color=0FAE6E&label=views&style=flat)
 ### `dict.key` (Dot access) for Python dictionaries
 
 ## How do I use Classy-JSON?
