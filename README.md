@@ -18,11 +18,16 @@ with open('tests/test_large.json', 'r') as f:
 # turn a regular dictionary into a ClassyDict
 my_dict = {'a': 'b'}
 my_classy_dict = cj.classify(my_dict)
+print(my_classy_dict.a)
+
 # or
+
 my_classy_dict = cj.ClassyDict(my_dict)
+print(my_classy_dict.a)
 
 # make a new ClassyDict
 new_classy_dict = cj.ClassyDict()
+new_classy_dict.a = 'b'
 ```
 
 ## Setup / Install
