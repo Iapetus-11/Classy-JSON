@@ -3,7 +3,7 @@
 
 ## How do I use Classy-JSON?
 * Classy-JSON can be used nearly identically to the regular built-in json module! [json module docs](https://docs.python.org/3/library/json.html)
-* The only differences are that you can now access dictionaries via `dict.key` as well as `dict['key']`, and that the .copy() method is now a deep copy.
+* The only differences are that you can now access dictionaries via `dict.key` as well as `dict['key']`, and that the `.copy()` method is now a deep copy.
 * Using `dict.key` is about 2-2.5x slower \[in some cases\] than using `dict['key']`, however, using `dict['key']` is just as fast as in normal Python dictionaries. For most use cases, this difference is negligible.
 * What seperates Classy-JSON and its custom data structures from other alternatives? Classy-JSON is both better in its speed and package size, other similiar packages have unecessary code and just aren't as fast as Classy-JSON
 
