@@ -49,6 +49,4 @@ python3 setup.py build install
 ```
 
 ## Contribution
-* Fork the repository
-* Make any changes
-* Submit a pull request
+* Contributions are welcome! Just submit a pull request!
