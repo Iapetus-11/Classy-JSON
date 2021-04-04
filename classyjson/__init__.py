@@ -1,8 +1,8 @@
 """
-Dot-access for Python dictionaries and more
+Dot-access for Python dictionaries
 """
 
-__version__ = '3.0.3'
+__version__ = '3.1.0'
 
 from json import loads as json_loads
 from json import load as json_load
