@@ -6,12 +6,17 @@ Contains the ClassyTypes and the classify function
 def classify(thing):
     """Used to recursively convert regular containers into ClassyDicts"""
 
-    if isinstance(thing, dict):  # Convert dict to dot-accessible ClassyDict
+    # convert dict to ClassyDict
+    if isinstance(thing, dict):
         return ClassyDict(thing)
 
-    # This adds support for iterables which are subclasses or instances of lists and tuples
-    if isinstance(thing, (list, tuple)):
-        return type(thing)(classify(item) for item in thing)
+    # attempt to convert items of a list to ClassyDicts
+    if isinstance(thing, list):
+        return [classify(item) for item in thing]
+
+    # attempt to convert items of a tuple to ClassyDicts
+    if isinstance(thing, tuple):
+        return tuple(classify(item) for item in thing)
 
     return thing
 
