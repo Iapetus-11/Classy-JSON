@@ -25,17 +25,17 @@ class ClassyDict(dict):
     """dict subclass required for dot access"""
 
     def __init__(self, _dict=None):
-        if _dict is None:  # Allow for creating a new ClassyDict via CLassyDict()
+        if _dict is None:  # allow for creating a new ClassyDict via CLassyDict()
             _dict = {}
 
         dict.__init__(self, {k:classify(v) for (k, v) in _dict.items()})
 
-    # Override the attribute methods to add dot access
+    # override the attribute methods to add dot access
     __getattr__ = dict.__getitem__
     __delattr__ = dict.__delitem__
 
-    def __setattr__(self, name, value):  # Add dot-access ClassyDict.a = 'something'
+    def __setattr__(self, name, value):  # add dot-access ClassyDict.a = 'something'
         return dict.__setitem__(self, name, classify(value))
 
-    def copy(self):  # Actually is a deep copy unlike the default shallow .copy()
+    def copy(self):  # actually is a deep copy unlike the default shallow .copy()
         return classify(dict.copy(self))
