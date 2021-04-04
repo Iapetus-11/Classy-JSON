@@ -26,9 +26,9 @@ class ClassyDict(dict):
 
     def __init__(self, _dict=None):
         if _dict is None:  # allow for creating a new ClassyDict via CLassyDict()
-            _dict = {}
-
-        dict.__init__(self, {k:classify(v) for (k, v) in _dict.items()})
+            dict.__init__(self)
+        else:
+            dict.__init__(self, {k: classify(v) for (k, v) in _dict.items()})
 
     # override the attribute methods to add dot access
     __getattr__ = dict.__getitem__
