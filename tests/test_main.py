@@ -13,21 +13,21 @@ def test_creation():
 def test_usage():
     d = ClassyDict({"a": "b", "c": [1, 2, 3]})
 
-    d["a"]
-    d.a
-    d["c"][1]
-    d.c[1]
-
     assert "a" in d
 
+    assert d["a"] == "b"
+    assert d.a == "b"
+    assert d["c"][0] == 1
+    assert d.c[0] == 1
+
+
     d.e = "abcdefhijklmonpqrstuv"
-    d["e"]
-    d.e
 
-    d["g"] = 12354
-    d.g
-    d["g"]
+    assert "e" in d
 
-    assert "g" in d
+    assert d["e"] == "abcdefhijklmonpqrstuv"
+    assert d.e == "abcdefhijklmonpqrstuv"
 
-    del d["g"]
+    del d["e"]
+
+    assert "e" not in d
