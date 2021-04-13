@@ -1,4 +1,4 @@
-from ..classyjson import *
+from classyjson import *
 
 def test_creation():
     d = ClassyDict()
