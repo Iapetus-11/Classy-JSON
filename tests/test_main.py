@@ -54,6 +54,7 @@ def test_access_time():
 
     print(f"CJ: {cd_t:2.4f} | D: {od_t:2.4f} | diff: {(cd_t - od_t):2.4f}")
 
+
 def test_set_time():
     od = {"a": "b", "c": "d", "e": [1, 2, 3, 4, 5]}
     cd = ClassyDict(od.copy())
