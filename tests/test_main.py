@@ -26,7 +26,6 @@ def test_usage():
     assert d["c"][0] == 1
     assert d.c[0] == 1
 
-
     d.e = "abcdefhijklmonpqrstuv"
 
     assert "e" in d
@@ -37,6 +36,7 @@ def test_usage():
     del d["e"]
 
     assert "e" not in d
+
 
 def test_time():
     od = {"a": "b", "c": "d", "e": [1, 2, 3, 4, 5]}
