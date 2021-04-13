@@ -38,7 +38,7 @@ def test_usage():
     assert "e" not in d
 
 
-def test_time():
+def test_access_time():
     od = {"a": "b", "c": "d", "e": [1, 2, 3, 4, 5]}
     cd = ClassyDict(od.copy())
 
@@ -52,4 +52,20 @@ def test_time():
         cd.a
     cd_t = time.time() - cd_t
 
-    print(f"ACCESS: CJ: {cd_t} | D: {od_t} | diff: {cd_t - od_t}")
+    print(f"CJ: {cd_t:2.4f} | D: {od_t:2.4f} | diff: {(cd_t - od_t):2.4f}")
+
+def test_set_time():
+    od = {"a": "b", "c": "d", "e": [1, 2, 3, 4, 5]}
+    cd = ClassyDict(od.copy())
+
+    od_t = time.time()
+    for i in range(100000):
+        od["a"] = i
+    od_t = time.time() - od_t
+
+    cd_t = time.time()
+    for i in range(100000):
+        cd.a = i
+    cd_t = time.time() - cd_t
+
+    print(f"   CJ: {cd_t:2.4f} | D: {od_t:2.4f} | diff: {(cd_t - od_t):2.4f}")
