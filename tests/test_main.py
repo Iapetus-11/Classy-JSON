@@ -11,5 +11,21 @@ def test_creation():
 def test_usage():
     d = ClassyDict({"a": "b", "c": [1, 2, 3]})
 
+    d["a"]
     d.a
+    d["c"][1]
     d.c[1]
+
+    assert "a" in d
+
+    d.e = "abcdefhijklmonpqrstuv"
+    d["e"]
+    d.e
+
+    d["g"] = 12354
+    d.g
+    d["g"]
+
+    assert "g" in d
+
+    del d["g"]
