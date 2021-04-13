@@ -1,3 +1,4 @@
+import time
 import sys
 import os
 
@@ -36,3 +37,19 @@ def test_usage():
     del d["e"]
 
     assert "e" not in d
+
+def test_time():
+    od = {"a": "b"}
+    cd = ClassyDict(od.copy())
+
+    od_t = time.time()
+    for _ in range(100000):
+        od["a"]
+    od_t = time.time() - od_t
+
+    cd_t = time.time()
+    for _ in range(100000):
+        cd.a
+    cd_t = time.time() - cd_t
+
+    print(f"CJ: {cd_t} | D: {od_t} | --: {cd_t - od_t}")
