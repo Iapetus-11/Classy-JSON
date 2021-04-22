@@ -5,7 +5,7 @@ Contains the ClassyTypes and the classify function
 # from __future__ import annotations
 
 
-def classify(thing: object):
+def classify(thing: object) -> object:
     """Used to recursively convert regular containers into ClassyDicts"""
 
     # convert dict to ClassyDict
@@ -36,8 +36,11 @@ class ClassyDict(dict):
     __getattr__ = dict.__getitem__
     __delattr__ = dict.__delitem__
 
-    def __setattr__(self, name: object, value: object) -> None:  # add dot-access ClassyDict.a = 'something'
+    def __setitem__(self, name, value) -> None:
         dict.__setitem__(self, name, classify(value))
 
-    def copy(self) -> object:  # actually is a deep copy unlike the default shallow .copy()
+    def __setattr__(self, name, value) -> None:  # add dot-access ClassyDict.a = 'something'
+        self.__setitem__(name, classify(value))
+
+    def copy(self) -> ClassyDict:  # actually is a deep copy unlike the default shallow .copy()
         return classify(dict.copy(self))
