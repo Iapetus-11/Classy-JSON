@@ -2,7 +2,7 @@
 Contains the ClassyTypes and the classify function
 """
 
-# from __future__ import annotations
+from typing import Union
 
 
 def classify(thing: object) -> object:
@@ -26,7 +26,7 @@ def classify(thing: object) -> object:
 class ClassyDict(dict):
     """dict subclass required for dot access"""
 
-    def __init__(self, _dict: dict = None) -> None:
+    def __init__(self, _dict: object = None) -> None:
         if _dict is None:  # allow for creating a new ClassyDict via ClassyDict()
             dict.__init__(self)
         else:
@@ -42,5 +42,5 @@ class ClassyDict(dict):
     def __setattr__(self, name, value) -> None:  # add dot-access ClassyDict.a = 'something'
         self.__setitem__(name, classify(value))
 
-    def copy(self) -> ClassyDict:  # actually is a deep copy unlike the default shallow .copy()
+    def copy(self) -> object:  # actually is a deep copy unlike the default shallow .copy()
         return classify(dict.copy(self))
