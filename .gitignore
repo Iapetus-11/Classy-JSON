@@ -6,5 +6,6 @@ __pycache__/
 
 build/
 classy_json.egg-info/
+classy_json_cython.egg-info/
 .pytest_cache/
 dist/
