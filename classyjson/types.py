@@ -27,7 +27,7 @@ class ClassyDict(dict):
     """dict subclass required for dot access"""
 
     def __init__(self, _dict=None) -> None:
-        if _dict is None:  # allow for creating a new ClassyDict via CLassyDict()
+        if _dict is None:  # allow for creating a new ClassyDict via ClassyDict()
             dict.__init__(self)
         else:
             dict.__init__(self, {k: classify(v) for (k, v) in _dict.items()})
