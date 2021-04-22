@@ -13,13 +13,11 @@ setuptools.setup(
     url="https://github.com/Iapetus-11/classy-json",
     setup_requires=["cython"],
     packages=setuptools.find_packages(),
-    ext_modules=[
-        setuptools.Extension('classyjson.types', sources=['classyjson/types.pyx'])
-    ],
+    ext_modules=[setuptools.Extension("classyjson.types", sources=["classyjson/types.pyx"])],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.6"
+    python_requires=">=3.6",
 )
