@@ -2,8 +2,6 @@
 Contains the ClassyTypes and the classify function
 """
 
-from typing import Union
-
 
 def classify(thing: object) -> object:
     """Used to recursively convert regular containers into ClassyDicts"""
