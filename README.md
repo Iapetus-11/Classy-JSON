@@ -32,7 +32,7 @@ new_classy_dict.a = 'b'
 ## Setup / Install
 ### Using pip:
 ```
-python3 -m pip install classy-json
+python3 -m pip install classy-json-cython
 ```
 ### Manually:
 * Clone the repository
@@ -42,6 +42,10 @@ git clone https://github.com/Iapetus-11/Classy-JSON.git
 * cd into the directory
 ```
 cd Classy-JSON
+```
+* checkout the cython branch
+```
+git checkout cython-rewrite
 ```
 * Run setup.py
 ```

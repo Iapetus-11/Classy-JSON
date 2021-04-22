@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="classy-json-cython",
-    version="1.0.0",
+    version="1.0.1",
     author="Iapetus-11",
     description="Dot access for Python dictionaries",
     long_description=long_description,
