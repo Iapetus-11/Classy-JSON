@@ -8,10 +8,6 @@ from json import loads as json_loads
 from json import load as json_load
 from json import *
 
-import pyximport
-
-pyximport.install(language_level=3)
-
 from .types import classify, ClassyDict
 
 
