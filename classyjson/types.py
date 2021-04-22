@@ -36,6 +36,9 @@ class ClassyDict(dict):
     __getattr__ = dict.__getitem__
     __delattr__ = dict.__delitem__
 
+    def __setitem__(self, name, value) -> None:
+        dict.__setitem__(self, name, classify(value))
+
     def __setattr__(self, name, value) -> None:  # add dot-access ClassyDict.a = 'something'
         self.__setitem__(name, classify(value))
 
