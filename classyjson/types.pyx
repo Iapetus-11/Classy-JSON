@@ -38,7 +38,7 @@ class ClassyDict(dict):
         dict.__setitem__(self, name, classify(value))
 
     def __setattr__(self, name, value) -> None:  # add dot-access ClassyDict.a = 'something'
-        self.__setitem__(name, classify(value))
+        self.__setitem__(name, value)
 
     def copy(self) -> object:  # actually is a deep copy unlike the default shallow .copy()
         return classify(dict.copy(self))
