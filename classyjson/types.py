@@ -2,8 +2,10 @@
 Contains the ClassyTypes and the classify function
 """
 
+from __future__ import annotations
 
-def classify(thing):
+
+def classify(thing) -> object:
     """Used to recursively convert regular containers into ClassyDicts"""
 
     # convert dict to ClassyDict
@@ -24,7 +26,7 @@ def classify(thing):
 class ClassyDict(dict):
     """dict subclass required for dot access"""
 
-    def __init__(self, _dict=None):
+    def __init__(self, _dict=None) -> None:
         if _dict is None:  # allow for creating a new ClassyDict via CLassyDict()
             dict.__init__(self)
         else:
@@ -34,8 +36,8 @@ class ClassyDict(dict):
     __getattr__ = dict.__getitem__
     __delattr__ = dict.__delitem__
 
-    def __setattr__(self, name, value):  # add dot-access ClassyDict.a = 'something'
-        return dict.__setitem__(self, name, classify(value))
+    def __setattr__(self, name, value) -> None:  # add dot-access ClassyDict.a = 'something'
+        dict.__setitem__(self, name, classify(value))
 
-    def copy(self):  # actually is a deep copy unlike the default shallow .copy()
+    def copy(self) -> ClassyDict:  # actually is a deep copy unlike the default shallow .copy()
         return classify(dict.copy(self))
