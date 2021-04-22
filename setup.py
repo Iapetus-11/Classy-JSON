@@ -1,19 +1,15 @@
 import setuptools  # import order matters here wth
 
-try:
-    from Cython.Build import cythonize
-except ImportError:
-    # create closure for deferred import
-    def cythonize (*args, ** kwargs ):
-        from Cython.Build import cythonize
-        return cythonize(*args, ** kwargs)
+setuptools.dist.Distribution().fetch_build_eggs(["Cython>=0.15.1"])
+
+from Cython.Build import cythonize
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="classy-json-cython",
-    version="1.0.2",
+    version="1.0.3",
     author="Iapetus-11",
     description="Dot access for Python dictionaries",
     long_description=long_description,
@@ -27,5 +23,4 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.6",
-    install_requires=["cython"],
 )
