@@ -38,8 +38,10 @@ def test_usage():
     assert "e" not in d
 
     d.abc = ["bruh", {"testing": 123}]
-
     assert isinstance(d.abc[1], ClassyDict)
+
+    d["def"] = ["bruh", {"testing": 123}]
+    assert isinstance(d["def"][1], ClassyDict)
 
 
 def test_access_time():
