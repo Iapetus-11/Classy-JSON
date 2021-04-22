@@ -1,5 +1,12 @@
 import setuptools  # import order matters here wth
-from Cython.Build import cythonize
+
+try:
+    from Cython.Build import cythonize
+except ImportError:
+    # create closure for deferred import
+    def cythonize (*args, ** kwargs ):
+        from Cython.Build import cythonize
+        return cythonize(*args, ** kwargs)
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
