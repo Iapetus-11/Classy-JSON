@@ -26,6 +26,8 @@ def classify(thing: object) -> object:
 class ClassyDict(dict):
     """dict subclass required for dot access"""
 
+    __slots__ = ()
+
     def __init__(self, _dict=None) -> None:
         if _dict is None:  # allow for creating a new ClassyDict via ClassyDict()
             dict.__init__(self)
@@ -40,7 +42,7 @@ class ClassyDict(dict):
         dict.__setitem__(self, name, classify(value))
 
     def __setattr__(self, name, value) -> None:  # add dot-access ClassyDict.a = 'something'
-        self.__setitem__(name, classify(value))
+        dict.__setitem__(self, name, classify(value))
 
     def copy(self) -> ClassyDict:  # actually is a deep copy unlike the default shallow .copy()
         return classify(dict.copy(self))
