@@ -15,6 +15,18 @@ def test_creation():
 
     assert isinstance(d["c"][3], ClassyDict)
 
+    od_t = time.time()
+    for _ in range(10000):
+        od = {"a": "b", "c": [1, 2, 3, {"a": "b", "c": {"d": "e", "f": "g"}}]}
+    od_t = time.time() - od_t
+
+    cd_t = time.time()
+    for _ in range(10000):
+        cd = ClassyDict({"a": "b", "c": [1, 2, 3, {"a": "b", "c": {"d": "e", "f": "g"}}]})
+    cd_t = time.time() - cd_t
+
+    print(f"   CJ: {cd_t:2.4f} | D: {od_t:2.4f} | diff: {(cd_t - od_t):2.4f}")
+
 
 def test_usage():
     d = ClassyDict({"a": "b", "c": [1, 2, 3]})
