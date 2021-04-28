@@ -9,15 +9,14 @@ testpaths = ["tests"]
 
 [tool.poetry]
 name = "classy-json"
-version = "3.2.0"
+version = "3.2.1"
 description = "Dot-access for Python dictionaries like JS!"
 authors = ["Milo Weinberg <iapetus011@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/Iapetus-11/Classy-JSON"
-packages = [
-  { include = "classyjson" }
-]
+keywords = ["json", "dot-access", "dot access", "js", "javascript"]
+packages = [{ include = "classyjson" }]
 
 [tool.poetry.dependencies]
 python = "^3.7.3"
